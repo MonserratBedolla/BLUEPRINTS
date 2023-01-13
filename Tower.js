@@ -1,5 +1,5 @@
 class Tower{
-    contructor(x,y,width,height){
+    constructor(x,y,width,height){
         var options = {
             isStatic: true
        };

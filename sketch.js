@@ -36,6 +36,7 @@ function draw()
 
   Engine.update(engine);
   tower.display();
+  cannon.display();
  
 }
 
