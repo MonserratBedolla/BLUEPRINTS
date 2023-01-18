@@ -11,7 +11,7 @@ var tower;
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
   towerImage = loadImage("./assets/tower.png");
-
+  cannonBallImage = loadImage("./assets/cannonball.png");
 }
 
 
@@ -24,6 +24,7 @@ function setup() {
 
   tower = new Tower(150,350,160,310);
   cannon = new Cannon(180,110,100,50,angle);
+  cannonBall = new CannonBall(cannon.x,cannon.y);
 
   rectMode(CENTER);
   ellipseMode(RADIUS);
@@ -37,6 +38,11 @@ function draw()
   Engine.update(engine);
   tower.display();
   cannon.display();
- 
+  cannonBall.display();
 }
 
+function keyReleased(){
+  if(keyCode===DOWN_ARROW){
+    cannonBall.shoot()
+  }
+}
