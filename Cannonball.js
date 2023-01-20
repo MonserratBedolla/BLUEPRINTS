@@ -18,14 +18,14 @@ class CannonBall{
         translate (pos.x, pos.y);
         rotate (angle);
         imageMode(CENTER);
-        image (this.image,0,0,this.r,this,r);
+        image (this.image,0,0,this.r,this.r);
         pop();
     }
     shoot(){
-        var velocity=p5.Vector.fromAnglle(cannon.angle);
+        var velocity=p5.Vector.fromAngle(cannon.angle);
         velocity.mult(20);
         Matter.Body.setStatic(this.body,false);
-        Matter.Body.setVeocity(this.body,{x:velocity.x,y:velocity.y});
+        Matter.Body.setVelocity(this.body,{x:velocity.x,y:velocity.y});
 
     }
 }

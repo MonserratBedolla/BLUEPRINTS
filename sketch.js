@@ -7,6 +7,12 @@ let engine;
 let world;
 
 var tower;
+var a=[10,20,14,3,27,94];
+console.log(a);
+console.log(a[4])
+a.push(94);
+
+var balls = [];
 
 function preload() {
   backgroundImg = loadImage("./assets/background.gif");
@@ -24,7 +30,6 @@ function setup() {
 
   tower = new Tower(150,350,160,310);
   cannon = new Cannon(180,110,100,50,angle);
-  cannonBall = new CannonBall(cannon.x,cannon.y);
 
   rectMode(CENTER);
   ellipseMode(RADIUS);
@@ -38,11 +43,26 @@ function draw()
   Engine.update(engine);
   tower.display();
   cannon.display();
-  cannonBall.display();
+
+  for(var i=0; i<balls.length ; i++){
+    showCannonBalls(balls[i],i)
+  }
+
+}
+
+function KeyPressed(){
+  if(keyCode===DOWN_ARROW){
+    cannonBall = new CannonBall(cannon.x,cannon.y);
+    balls.push(cannonBall);
+  }
 }
 
 function keyReleased(){
   if(keyCode===DOWN_ARROW){
-    cannonBall.shoot()
+    balls[balls.length-1].shoot();
   }
+}
+
+function showCannonBalls(ball,index){
+  ball.display();
 }
