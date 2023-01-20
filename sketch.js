@@ -50,16 +50,19 @@ function draw()
 
 }
 
-function KeyPressed(){
+//keyPressed en minuscula la primera
+function keyPressed(){
   if(keyCode===DOWN_ARROW){
-    cannonBall = new CannonBall(cannon.x,cannon.y);
+    cannonBall = new Cannonball(cannon.x,cannon.y);
     balls.push(cannonBall);
   }
 }
 
+
+
 function keyReleased(){
   if(keyCode===DOWN_ARROW){
-    balls[balls.length-1].shoot();
+    balls[balls.length-1].shoot()
   }
 }
 
