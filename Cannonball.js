@@ -24,7 +24,8 @@ class CannonBall{
         image (this.image,0,0,this.r,this.r);
         pop();
 
-        if(this.body.velocity.x>0 && this.body.velocity.x>300){
+        //en la segunda condición es position en vez de velocity
+        if(this.body.velocity.x>0 && this.body.////.x>300){
             var position =[this.body.position.x, this.body.position.y];
             this.trajectory.push(position);
             console.log("error del if");
