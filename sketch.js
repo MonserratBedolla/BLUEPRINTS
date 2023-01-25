@@ -7,11 +7,6 @@ let engine;
 let world;
 
 var tower;
-var a=[10,20,14,3,27,94];
-console.log(a);
-console.log(a[4])
-a.push(94);
-
 var balls = [];
 
 function preload() {
